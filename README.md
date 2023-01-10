@@ -121,7 +121,9 @@ Represents a new type of ThreadPool that supports a queue of priority tasks, all
 which are available for the benefit of the Java Virtual Machine
  *maxPoolSize - represent the maximum number of threads in the collection of threads in CustomExecutor will be the number of available processors
  less 1 of the Java Virtual Machine in favor.
- *maxPriority- the maximum of priority of all the tasks
+ *currentMax- the maximum of priority
+ When we make new thread pool from ThreadPoolExecutor class we put in block the beforeExecute method that take the 
+<!--   -->
  
  We have 3 methods of submit :
  - Submit method that get parameter from type Task - a method for submitting task instances to a priority task queue and return variable a RunnableFuture<T> that has been executed
