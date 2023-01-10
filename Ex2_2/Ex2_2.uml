@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Ex2_2</OriginalElement>
+  <nodes>
+    <node x="354.9677981325104" y="477.7162182277718">Ex2_2.Tests</node>
+    <node x="-36.23087295813582" y="40.11978403813396">Ex2_2.TaskType</node>
+    <node x="-76.56753303087298" y="289.1004078443675">Ex2_2.Task</node>
+    <node x="271.7363305102444" y="-14.274401429830647">Ex2_2.CustomExecutor</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Ex2_2.Tests" target="Ex2_2.CustomExecutor" relationship="CREATE">
+      <point x="2.7685323777340045" y="-38.5" />
+      <point x="0.0" y="215.50000000000003" />
+    </edge>
+    <edge source="Ex2_2.Task" target="Ex2_2.TaskType" relationship="TO_ONE">
+      <point x="-3.6633399272628395" y="-160.5" />
+      <point x="0.0" y="94.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.9318885448916409" showDependencies="true" x="264.49999999999994" y="308.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
