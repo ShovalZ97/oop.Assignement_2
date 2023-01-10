@@ -95,8 +95,8 @@ The number of the task type.
 Represents an operation that can be run asynchronously and can return a value of some type (that is, will be defined). as a type
 return generic (. It is not necessary for the operation to succeed and in case of failure, an exception will be thrown (E)
 
-Extends FutureTask<E> because ecause in the CustomExecutor class
-We make an exeute that receives a variable of type Runnable Future.
+Extends FutureTask<E> because in the CustomExecutor class
+We use an exeute that receives a variable of type Runnable Future.
 Implenents Callable<E> - A task that returns a result and may throw an exception.
 And Comparable<Task<E>> - To compare between the priority task(The priorityblockingquque class
 make the comparison according to the compareTo function that found in the Task class.
@@ -128,6 +128,7 @@ which are available for the benefit of the Java Virtual Machine
  - Submit method that get parameter from type Task - a method for submitting task instances to a priority task queue and return variable a RunnableFuture<T> that has been executed
   - Submit method that get 2 parameters of Callable and TaskType , in this function we use in our first method of submit that get 1 parameter of type Task.
  A method whose purpose is to submit to the queue an operation that can be performed asynchronously.
+ We use an exeute that receives a variable of type Runnable Future.
  - Submit method that get parameter of Callable , in this function we use in our first method of submit that get 1 parameter of type Task.
  A method whose purpose is to submit to a queue an operation that can be performed asynchronously without a TaskType as a parameter
 
