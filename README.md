@@ -78,7 +78,7 @@ Therefore, we are in a problem when we want to prioritize an asynchronous task u
 1. Interface <V> can be called in an interface that represents a task with a generic return value.
 A task that is of type <V> Callable cannot be executed by a normal thread, cannot be assigned to it
 indirectly preferred.
-2. B-ThreadPool which is placed according to its tasks can be activated or <V<Callable, since it is not possible to determine
+2. ThreadPool which is placed according to its tasks can be activated or <V<Callable, since it is not possible to determine
 Priority to a specific Thread in the Executor's Threads collection.
 
 In this part we created a new type that represents an asynchronous task with priority and a new ThreadPool type that supports tasks with
@@ -121,9 +121,7 @@ Represents a new type of ThreadPool that supports a queue of priority tasks, all
 which are available for the benefit of the Java Virtual Machine
  *maxPoolSize - represent the maximum number of threads in the collection of threads in CustomExecutor will be the number of available processors
  less 1 of the Java Virtual Machine in favor.
- *currentMax- the maximum of priority
- When we make new thread pool from ThreadPoolExecutor class we put in block the beforeExecute method that take the 
-<!--   -->
+ *maxPriority- the maximum of priority
  
  We have 3 methods of submit :
  - Submit method that get parameter from type Task - a method for submitting task instances to a priority task queue and return variable a RunnableFuture<T> that has been executed
