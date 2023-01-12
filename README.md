@@ -113,31 +113,40 @@ We do overrider to compareTo method because we changed the method to compare the
   - The hashCode() method in Java is used to compute hash values of Java objects and to do run time of O(1).
  
 ### CustomExecutor Class - the second class we create 
-Represents a new type of ThreadPool that supports a queue of priority tasks, all a task in the queue is of TaskType.
- CustomExecutor will create a Task before putting it in the queue by passing <V> Callable and enum of type TaskType .CustomExecutor will execute the tasks according to their priority.
- 
-- The constructor of class CustomExecutor : 
- *corePoolSize - represent the minimum number of threads in the collection of threads in CustomExecutor will be half the number of processors
-which are available for the benefit of the Java Virtual Machine
- *maxPoolSize - represent the maximum number of threads in the collection of threads in CustomExecutor will be the number of available processors
- less 1 of the Java Virtual Machine in favor.
- *maxPriority- the maximum of priority
- 
- We have 3 methods of submit :
- - Submit method that get parameter from type Task - a method for submitting task instances to a priority task queue and return variable a RunnableFuture<T> that has been executed
-  - Submit method that get 2 parameters of Callable and TaskType , in this function we use in our first method of submit that get 1 parameter of type Task.
- A method whose purpose is to submit to the queue an operation that can be performed asynchronously.
- We use an exeute that receives a variable of type Runnable Future.
- - Submit method that get parameter of Callable , in this function we use in our first method of submit that get 1 parameter of type Task.
- A method whose purpose is to submit to a queue an operation that can be performed asynchronously without a TaskType as a parameter
+This class contains a custom implementation of the ThreadPoolExecutor class in Java. The CustomExecutor class allows for the execution of tasks with different priorities using a PriorityBlockingQueue to hold the tasks.
 
+##### Methods
+The following methods are provided for task submission:
+
+submit(Task task): This method submits a task instance to a priority task queue. It returns a RunnableFuture<Object> that has been executed.
+submit(Callable task, TaskType taskPriority): This method submits to the queue an operation that can be performed asynchronously with the addition of TaskType. It returns an object of type Future.
+submit(Callable task): This method submits to a queue an operation that can be performed asynchronously without a TaskType as a parameter. It returns an object of type Future.
+
+#### Additional methods provided:
+
+setCorePoolSize(int corePoolSize): This method sets the core pool size.
+setMaxPoolSize(int maxPoolSize): This method sets the max pool size.
+setNumOfCores(int numOfCores): This method sets the number of cores.
+getQueueTPriority(): This method returns the priority task queue.
+getNumOfCores(): This method returns the number of cores.
+getCorePoolSize(): This method returns the core pool size.
+getMaxPoolSize(): This method returns the max pool size.
+The beforeExecute method is overridden to decrement the count of the current maximum number of tasks with a given priority.
+
+- shutdown() method is provided which allow previously submitted tasks to execute before terminating. isTerminated() method is used to wait for all the tasks submitted to the service to complete execution.
+The CustomExecutor class can be used by creating an instance of it and then using the provided methods to submit tasks for execution. Tasks can be submitted with or without a TaskType priority. The class also allows for setting the core and max pool size, and getting the number of cores and the priority task queue.
  - The gracefullyTerminate method -
   A method that check if all tasks is done,not allow entry of additional tasks to the queue and Completing all remaining tasks in the queue.
   In this function we used the shutdown method that allow previously submitted tasks to execute before terminating,we used the isTerminated method of      ThreadPoolExecutor class returns true if all the tasks have been completed following shut down.
   And we used isTerminated() method of ExecutorService in Java is used to wait for all the tasks submitted to the service to complete execution
  
 ### Tests Class - check if we have implemented what is required.
+
+### Design Patterns
+
+We used the design pattern of the factory method in the Task class. The class has two factory methods "createTask()" which creates a Task object with default priority and another one with an additional parameter TaskType priority which are used to create new Task objects (accessed by our constructors which are a private method). These factory methods provide a way to create objects without exposing the instance logic to the client. Factory methods are typically used to create objects of a particular type, but they can also be used to create objects of different types based on the input provided to the factory method.
  
 ### Class diagram
- 
-<img src="https://user-images.githubusercontent.com/118892976/211532284-710cc6fa-77c2-4fea-99f0-3b9835ed1b8f.png" alt="drawing" width="500"/>
+
+<img src="https://user-images.githubusercontent.com/118892976/212069825-02c81ca5-5f98-46f0-a694-bad1f0c8745a.png" alt="drawing" width="500"/>
+
