@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Ex2_1</OriginalElement>
+  <nodes>
+    <node x="194.2644180965754" y="-14.57947375964386">Ex2_1.CountLine</node>
+    <node x="136.12484593617688" y="191.41736570164525">Ex2_1.Ex2_1</node>
+    <node x="-81.39120600572025" y="226.90772495831584">Ex2_1.Ex2_Test</node>
+    <node x="-59.85431041305705" y="52.32379959749744">Ex2_1.CountLineCollable</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Ex2_1.Ex2_1" target="Ex2_1.CountLineCollable" relationship="CREATE">
+      <point x="-89.36042783960147" y="-71.5" />
+      <point x="176.7644180965754" y="90.82379959749744" />
+      <point x="95.0" y="0.0" />
+    </edge>
+    <edge source="Ex2_1.Ex2_1" target="Ex2_1.CountLine" relationship="CREATE">
+      <point x="1.1395721603985294" y="-71.5" />
+      <point x="0.0" y="72.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="true" x="167.5" y="170.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
