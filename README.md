@@ -47,7 +47,7 @@ In this function ew are deleting all the files that we are creating after we are
 
 ### Class diagram
 
-<img src="https://user-images.githubusercontent.com/118892976/211633816-fef45783-d7b6-4823-9fbd-fd27a6809722.png" alt="drawing" width="500"/>
+<img src="https://user-images.githubusercontent.com/118892976/212327004-1f9582ac-6285-4c7a-981a-0e250bec9b80.png" alt="drawing" width="500"/>
 
 ### Running times of methods 2,3,4
 
